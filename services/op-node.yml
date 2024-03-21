@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  op-node:
+    image: rss3/op-node:d2c5ced00901227473fc196fda838191f0cb4e02
+    pull_policy: always
+    platform: linux/amd64
+    container_name: 'op-node'
+    ports:
+      - "9545:9545"
+      - "9003:9003"
+      - "6061:6061"
+      - "7301:7301"
+    volumes:
+      - "../config/opnode_p2p_priv.txt:/config/opnode_p2p_priv.txt"
+      - "../config/jwt-secret.txt:/config/jwt-secret.txt"
+      - "../config/rollup.json:/config/rollup.json"
+      - ./op_log:/op_log
+
+    env_file:
+      - ../envs/op-node.env
