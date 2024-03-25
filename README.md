@@ -1,4 +1,4 @@
-# RSS3-VSL-Chain
+# VSL RPC Node
 This is a containerd solution to run a VSL RPC Node.
 
 ## Configuration
@@ -16,6 +16,6 @@ bash gen-secret.sh
 run:
 ```azure
 docker compose up -d 
-dpcker compose down
+docker compose down
 ```
 
