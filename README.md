@@ -1,4 +1,4 @@
-# RSS3-VSL-Chain
+# VSL RPC Node
 This is a containerd solution to run a VSL RPC Node.
 
 ## Configuration
@@ -8,14 +8,17 @@ replace OP_NODE_L1_ETH_RPC to "your-ethereum-mainnet-rpc" in op-node.env
 For the initial deployment, generate the secret files:
 
 ## Deployment
-```azure
+
+### Via Docker for Development
+```shell
 bash gen-secret.sh
 ```
 
-
-run:
-```azure
+then run:
+```shell
 docker compose up -d 
-dpcker compose down
+docker compose down
 ```
+### Via Helm for Production
 
+See Helm Charts: <https://github.com/RSS3-Network/helm-charts/tree/main/charts/vsl-rpc>.
