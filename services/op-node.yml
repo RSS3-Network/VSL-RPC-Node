@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   op-node:
-    image: rss3/op-node:d2c5ced00901227473fc196fda838191f0cb4e02
+    image: rss3/op-node:0a0b56acffd988a0fe50110d60bb408ed01a66fa
     pull_policy: always
     platform: linux/amd64
     container_name: 'op-node'
