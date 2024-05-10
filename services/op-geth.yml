@@ -10,12 +10,15 @@ services:
       - "7300:7300"
     volumes:
       - "./l2_data:/db"
-      - "../config/genesis.json:/config/genesis.json"
-      - "../config/jwt-secret.txt:/config/jwt-secret.txt"
+      - "../${NETWORK}/genesis.json:/config/genesis.json"
+      - "../${NETWORK}/jwt-secret.txt:/config/jwt-secret.txt"
       - "../entrypoint-l2.sh:/entrypoint.sh"
     entrypoint:
       - "/bin/sh"
       - "/entrypoint.sh"
     container_name: 'op-geth-l2'
     env_file:
-      - ../envs/op-geth.env
+      - ../.env
+      - op-geth.env
+      - ../${NETWORK}/.config
+

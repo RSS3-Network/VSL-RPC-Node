@@ -12,10 +12,12 @@ services:
       - "6061:6061"
       - "7301:7301"
     volumes:
-      - "../config/opnode_p2p_priv.txt:/config/opnode_p2p_priv.txt"
-      - "../config/jwt-secret.txt:/config/jwt-secret.txt"
-      - "../config/rollup.json:/config/rollup.json"
+      - "../${NETWORK}/opnode_p2p_priv.txt:/config/opnode_p2p_priv.txt"
+      - "../${NETWORK}/jwt-secret.txt:/config/jwt-secret.txt"
+      - "../${NETWORK}/rollup.json:/config/rollup.json"
       - ./op_log:/op_log
 
     env_file:
-      - ../envs/op-node.env
+      - ../.env
+      - op-node.env
+      - ../${NETWORK}/.config
