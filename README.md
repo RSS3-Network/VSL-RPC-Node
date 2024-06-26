@@ -19,6 +19,11 @@ then run:
 docker compose up -d 
 docker compose down
 ```
+
+ run the following command to query the latest L2 block:
+```shell
+curl -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' -H "Content-Type: application/json" http://localhost:8545
+```
 ### Via Helm for Production
 
 See Helm Charts: <https://github.com/RSS3-Network/helm-charts/tree/main/charts/vsl-rpc>.
